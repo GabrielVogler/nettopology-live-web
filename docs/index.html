@@ -31,19 +31,22 @@
     </header>
 
     <main id="main-content">
-        <section id="hero">
-            <div class="container">
-                <h1>Netzwerk-Infrastruktur <br><span class="highlight">endlich sichtbar.</span></h1>
-                <p class="hero-subtitle">Automatisierte Layer-1 Topologie-Erkennung für Cisco-Umgebungen. Schnell, sicher und lokal.</p>
-                <div class="hero-cta">
-                    <a href="#demo" class="btn-primary">Demo ansehen</a>
-                    <a href="mailto:sales@nettopology-live.at?subject=Angebotsanfrage%20NetTopology%20Live&body=Sehr%20geehrtes%20Team%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Lizenz%20von%20NetTopology%20Live.%20Bitte%20senden%20Sie%20mir%20ein%20unverbindliches%20Angebot%20zu.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%2C" 
-       class="btn-secondary">
-       Angebot anfordern
-    </a>
-                </div>
+    <section id="hero">
+        <video autoplay muted loop playsinline id="hero-video">
+            <source src="assets/videos/network-bg.mp4" type="video/mp4">
+            Ihr Browser unterstützt kein Video.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="container hero-content">
+            <h1>Netzwerk-Infrastruktur <br><span class="highlight">endlich sichtbar.</span></h1>
+            <p class="hero-subtitle">Automatisierte Layer-1 Topologie-Erkennung für Cisco-Umgebungen. Schnell, sicher und lokal.</p>
+            <div class="hero-cta">
+                <a href="#demo" class="btn-primary">Live-Demo ansehen</a>
+                <a href="#pricing" class="btn-secondary">Angebot anfordern</a>
             </div>
-        </section>
+        </div>
+        </div>        
+    </section>
 
         <section id="demo">
             <div class="container demo-grid">
@@ -58,6 +61,44 @@
                 </div>
                 <div class="demo-visual">
                     <img src="assets/images/demo-netzwerk.svg" alt="Interaktives Netzwerkdiagramm mit Cisco Router, Switch und PCs" class="responsive-img shadow-box">
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="container">
+                <div class="pricing-header">
+                    <h2>Einfache Preisgestaltung</h2>
+                    <p>Wählen Sie den passenden Plan für Ihre Infrastruktur.</p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h3>Community</h3>
+                        <div class="price">0€</div>
+                        <p class="price-info">Dauerhaft kostenlos</p>
+                        <ul class="price-features">
+                            <li>Bis zu 5 Geräte</li>
+                            <li>Manuelle Topologie</li>
+                            <li>SSH Integration</li>
+                            <li>Community Support</li>
+                        </ul>
+                        <a href="mailto:sales@nettopology-live.at?subject=Community%20Edition" class="btn-secondary">Jetzt starten</a>
+                    </div>
+
+                    <div class="price-card featured">
+                        <div class="badge">Empfohlen</div>
+                        <h3>Pro Edition</h3>
+                        <div class="price"><span>ab</span> 249€</div>
+                        <p class="price-info">Einmalige Lizenzgebühr</p>
+                        <ul class="price-features">
+                            <li>Unlimitierte Geräte</li>
+                            <li><strong>Auto-Discovery (Layer-1)</strong></li>
+                            <li>SSH & RDP Integration</li>
+                            <li>1 Jahr Support & Updates</li>
+                        </ul>
+                        <a href="mailto:sales@nettopology-live.at?subject=Angebotsanfrage%20Pro%20Edition" class="btn-primary">Angebot anfordern</a>
+                    </div>
                 </div>
             </div>
         </section>
