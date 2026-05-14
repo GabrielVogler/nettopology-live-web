@@ -7,11 +7,11 @@
     <title>NetTopology Live | Home</title>
     
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/accessibility.css">
 
     <link rel="icon" href="assets/icons/favicon.ico">
 </head>
-<body>
+<body id="top">
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
     <header>
         <div class="container">
             <div class="logo">
@@ -29,20 +29,45 @@
             </nav>
         </div>
     </header>
-    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
     <main id="main-content">
         <section id="hero">
-            <h1>Netzwerk-Transparenz auf Knopfdruck.</h1>
-            <p>Automatisierte Layer-1 Topologie-Erkennung und direktes Management Ihrer Infrastruktur.</p>
-            <button class="btn-primary">Jetzt Demo anfordern</button>
+            <div class="container">
+                <h1>Netzwerk-Infrastruktur <br><span class="highlight">endlich sichtbar.</span></h1>
+                <p class="hero-subtitle">Automatisierte Layer-1 Topologie-Erkennung für Cisco-Umgebungen. Schnell, sicher und lokal.</p>
+                <div class="hero-cta">
+                    <a href="#demo" class="btn-primary">Demo ansehen</a>
+                    <a href="mailto:sales@nettopology-live.at?subject=Angebotsanfrage%20NetTopology%20Live&body=Sehr%20geehrtes%20Team%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Lizenz%20von%20NetTopology%20Live.%20Bitte%20senden%20Sie%20mir%20ein%20unverbindliches%20Angebot%20zu.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%2C" 
+       class="btn-secondary">
+       Angebot anfordern
+    </a>
+                </div>
+            </div>
         </section>
 
-        <section id="product-demo">
-            <h2>Netzwerk-Diagramm (Vorschau)</h2>
+        <section id="demo">
+            <div class="container demo-grid">
+                <div class="demo-text">
+                    <h2>Die intuitive Schaltzentrale</h2>
+                    <p>Erleben Sie, wie <strong>NetTopology Live</strong> Ihre Switches und Router in Echtzeit scannt und ein präzises Abbild Ihrer physischen Verkabelung erstellt.</p>
+                    <ul class="feature-list">
+                        <li><strong>Rechtsklick-Menü:</strong> Starten Sie SSH oder RDP direkt aus dem Diagramm.</li>
+                        <li><strong>Live-Status:</strong> Uptime-Monitoring für alle verbundenen Teilnehmer.</li>
+                        <li><strong>Flexibilität:</strong> Nodes händisch hinzufügen, löschen oder für die Ansicht filtern.</li>
+                    </ul>
+                </div>
+                <div class="demo-visual">
+                    <img src="assets/images/demo-netzwerk.svg" alt="Interaktives Netzwerkdiagramm mit Cisco Router, Switch und PCs" class="responsive-img shadow-box">
+                </div>
             </div>
         </section>
     </main>
+
+    <div class="back-to-top-wrapper">
+        <a href="#top" class="back-to-top" aria-label="Zurück zum Seitenanfang">
+            <span aria-hidden="true">↑</span> Nach oben
+        </a>
+    </div>
 
     <footer>
         <div class="container">
