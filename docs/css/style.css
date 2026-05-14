@@ -1,0 +1,188 @@
+/* --- Variablen & Branding (Aufgabe 3) --- */
+:root {
+    --bg-dark: #0d1117;
+    --bg-card: #161b22;
+    --text-main: #c9d1d9;
+    --accent-blue: #00e5ff; /* Deine Markenfarbe: Neon-Blau */
+    --status-up: #39d353;
+    --status-down: #f85149;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-mono: 'Cascadia Code', 'Courier New', monospace;
+}
+
+/* --- Basis-Setup & Barrierefreiheit (Aufgabe 1) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Skip-Link für Tastaturnutzer */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-blue);
+    color: black;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--bg-card);
+    border-bottom: 2px solid var(--accent-blue);
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover, nav a[aria-current="page"] {
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+/* --- Hero Section --- */
+#hero {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* --- Das Netzwerk-Diagramm (Pure CSS Mock) --- */
+#diagram-container {
+    background: #000;
+    border: 1px solid #30363d;
+    height: 400px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.node {
+    position: absolute;
+    width: 60px;
+    text-align: center;
+}
+
+.node-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--bg-card);
+    border: 2px solid var(--accent-blue);
+    border-radius: 4px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: help;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--status-up);
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    right: 5px;
+}
+
+/* Simulation des Rechtsklicks via CSS Hover/Focus */
+.node:hover .context-menu {
+    display: block;
+}
+
+.context-menu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--accent-blue);
+    list-style: none;
+    width: 120px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.context-menu li a {
+    display: block;
+    padding: 8px;
+    font-size: 0.8rem;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.context-menu li a:hover {
+    background: var(--accent-blue);
+    color: black;
+}
+
+/* Platzierung der Nodes */
+#router-main { top: 50px; left: 50%; transform: translateX(-50%); }
+#switch-a { top: 200px; left: 30%; }
+#switch-b { top: 200px; left: 70%; }
+
+/* --- Footer --- */
+footer {
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #30363d;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer a { color: var(--accent-blue); text-decoration: none; }
