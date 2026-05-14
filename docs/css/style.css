@@ -1,4 +1,3 @@
-/* --- Variablen & Branding (Aufgabe 3) --- */
 :root {
     --bg-dark: #0d1117;
     --bg-card: #161b22;
@@ -10,7 +9,6 @@
     --font-mono: 'Cascadia Code', 'Courier New', monospace;
 }
 
-/* --- Basis-Setup & Barrierefreiheit (Aufgabe 1) --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -34,7 +32,6 @@ body {
     padding: 0 20px;
 }
 
-/* Skip-Link für Tastaturnutzer */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -52,7 +49,6 @@ body {
     top: 0;
 }
 
-/* --- Header & Navigation --- */
 header {
     background-color: var(--bg-card);
     border-bottom: 2px solid var(--accent-blue);
@@ -116,13 +112,13 @@ nav a:hover, nav a[aria-current="page"] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(13, 17, 23, 0.75); /* Abdunklung für Lesbarkeit */
-    z-index: 1; /* Über dem Video */
+    background: rgba(13, 17, 23, 0.75);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Über dem Overlay */
+    z-index: 2;
     max-width: 900px;
     padding: 0 20px;
 }
@@ -145,7 +141,6 @@ nav a:hover, nav a[aria-current="page"] {
     margin: 20px auto;
 }
 
-/* --- Demo Section --- */
 #demo {
     padding: 80px 0;
     background-color: var(--bg-dark);
@@ -188,7 +183,6 @@ nav a:hover, nav a[aria-current="page"] {
     border: 1px solid #30363d;
 }
 
-/* --- Buttons --- */
 .hero-cta {
     display: flex;
     justify-content: center;
@@ -345,7 +339,6 @@ nav a:hover, nav a[aria-current="page"] {
     color: black;
 }
 
-/* --- Footer --- */
 footer {
     padding: 3rem 0;
     background-color: #0d1117;
@@ -356,7 +349,6 @@ footer {
 
 footer a { color: var(--accent-blue); text-decoration: none; }
 
-/* Responsive Media Queries */
 @media (max-width: 768px) {
     #hero h1 { font-size: 2rem; }
     .demo-grid { grid-template-columns: 1fr; text-align: center; }
