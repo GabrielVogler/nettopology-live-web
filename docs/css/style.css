@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. VARIABLEN & BRANDING
+   ========================================================================== */
 :root {
     --bg-dark: #0d1117;
     --bg-card: #161b22;
@@ -9,6 +12,9 @@
     --font-mono: 'Cascadia Code', 'Courier New', monospace;
 }
 
+/* ==========================================================================
+   2. BASIS-SETUP & RESET
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -32,6 +38,31 @@ body {
     padding: 0 20px;
 }
 
+/* ==========================================================================
+   3. GLOBAL TEXT-LINKS & TABLES (Barrierefreiheit)
+   ========================================================================== */
+a {
+    color: var(--accent-blue) !important;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+a:visited {
+    color: var(--accent-blue) !important;
+}
+
+a:hover, a:focus {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+table td {
+    color: var(--text-main);
+}
+
+/* ==========================================================================
+   4. LAYOUT COMPONENTEN (Header, Navigation, Skip-Link)
+   ========================================================================== */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -80,6 +111,10 @@ nav a:hover, nav a[aria-current="page"] {
     border-bottom: 2px solid var(--accent-blue);
 }
 
+/* ==========================================================================
+   5. SEKTIONEN (Hero, Demo, Pricing, Footer)
+   ========================================================================== */
+
 /* --- Hero Section mit Video Background --- */
 #hero {
     position: relative;
@@ -89,7 +124,7 @@ nav a:hover, nav a[aria-current="page"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black; /* Schwarz als Fallback während das Video lädt */
+    background-color: black; /* Fallback während das Video lädt */
     text-align: center;
 }
 
@@ -101,7 +136,7 @@ nav a:hover, nav a[aria-current="page"] {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 0; /* Ganz nach hinten */
+    z-index: 0;
     transform: translate(-50%, -50%);
     object-fit: cover;
 }
@@ -141,6 +176,14 @@ nav a:hover, nav a[aria-current="page"] {
     margin: 20px auto;
 }
 
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* --- Demo Section --- */
 #demo {
     padding: 80px 0;
     background-color: var(--bg-dark);
@@ -181,49 +224,6 @@ nav a:hover, nav a[aria-current="page"] {
 .shadow-box {
     box-shadow: 0 20px 50px rgba(0, 229, 255, 0.15);
     border: 1px solid #30363d;
-}
-
-.hero-cta {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.btn-primary, .btn-secondary {
-    padding: 12px 28px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-primary {
-    background-color: var(--accent-blue);
-    color: #000;
-    border: 2px solid var(--accent-blue);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--accent-blue);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid #30363d;
-}
-
-.btn-secondary:hover {
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
-}
-
-.btn-primary:focus, .btn-secondary:focus {
-    outline: 3px solid white;
-    outline-offset: 4px;
 }
 
 /* --- Pricing Section --- */
@@ -315,7 +315,7 @@ nav a:hover, nav a[aria-current="page"] {
     font-weight: bold;
 }
 
-/* --- Back to Top --- */
+/* --- Back to Top & Footer --- */
 .back-to-top-wrapper {
     text-align: center;
     padding: 40px 0;
@@ -349,9 +349,66 @@ footer {
 
 footer a { color: var(--accent-blue); text-decoration: none; }
 
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
 @media (max-width: 768px) {
     #hero h1 { font-size: 2rem; }
     .demo-grid { grid-template-columns: 1fr; text-align: center; }
     .feature-list li { text-align: left; }
     .hero-cta { flex-direction: column; align-items: center; }
+}
+
+/* ==========================================================================
+   7. ULTIMATIVER BUTTON-OVERRULE FIX (Garantierte Lesbarkeit)
+   ========================================================================== */
+.btn-primary, 
+a.btn-primary, 
+a.btn-primary:visited {
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background-color: var(--accent-blue) !important;
+    color: #000000 !important; /* Erzwingt schwarzen Text auf hellem Grund */
+    border: 2px solid var(--accent-blue) !important;
+    text-decoration: none !important;
+}
+
+.btn-primary:hover, 
+a.btn-primary:hover,
+.btn-primary:focus,
+a.btn-primary:focus {
+    background-color: transparent !important;
+    color: var(--accent-blue) !important; /* Text wird beim Hovern Cyan */
+    text-decoration: none !important;
+}
+
+.btn-secondary, 
+a.btn-secondary, 
+a.btn-secondary:visited {
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background-color: transparent !important;
+    color: #ffffff !important; /* Erzwingt weißen Text */
+    border: 2px solid #30363d !important;
+    text-decoration: none !important;
+}
+
+.btn-secondary:hover, 
+a.btn-secondary:hover,
+.btn-secondary:focus,
+a.btn-secondary:focus {
+    border-color: var(--accent-blue) !important;
+    color: var(--accent-blue) !important;
+    text-decoration: none !important;
+}
+
+.btn-primary:focus, .btn-secondary:focus {
+    outline: 3px solid white !important;
+    outline-offset: 4px;
 }
