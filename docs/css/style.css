@@ -39,7 +39,7 @@ body {
 }
 
 /* ==========================================================================
-   3. GLOBAL TEXT-LINKS & TABLES (Barrierefreiheit)
+   3. GLOBAL TEXT-LINKS & TABLES (Inhalt/Impressum)
    ========================================================================== */
 a {
     color: var(--accent-blue) !important;
@@ -100,15 +100,23 @@ nav ul {
     gap: 20px;
 }
 
-nav a {
-    color: var(--text-main);
-    text-decoration: none;
+/* FIX: Navbar-Links vor dem globalen Cyan-Kollisionskurs schützen */
+nav a, 
+nav a:visited {
+    color: var(--text-main) !important;
+    text-decoration: none !important;
     font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
 }
 
-nav a:hover, nav a[aria-current="page"] {
-    color: var(--accent-blue);
-    border-bottom: 2px solid var(--accent-blue);
+/* Nur bei Hover oder auf der aktiven Seite wird es Cyan */
+nav a:hover, 
+nav a:focus,
+nav a[aria-current="page"] {
+    color: var(--accent-blue) !important;
+    border-bottom: 2px solid var(--accent-blue) !important;
+    text-decoration: none !important;
 }
 
 /* ==========================================================================
@@ -124,7 +132,7 @@ nav a:hover, nav a[aria-current="page"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black; /* Fallback während das Video lädt */
+    background-color: black;
     text-align: center;
 }
 
@@ -347,7 +355,7 @@ footer {
     text-align: center;
 }
 
-footer a { color: var(--accent-blue); text-decoration: none; }
+footer a { color: var(--accent-blue) !important; text-decoration: none; }
 
 /* ==========================================================================
    6. RESPONSIVE DESIGN (Media Queries)
@@ -371,7 +379,7 @@ a.btn-primary:visited {
     transition: all 0.3s ease;
     display: inline-block;
     background-color: var(--accent-blue) !important;
-    color: #000000 !important; /* Erzwingt schwarzen Text auf hellem Grund */
+    color: #000000 !important;
     border: 2px solid var(--accent-blue) !important;
     text-decoration: none !important;
 }
@@ -381,7 +389,7 @@ a.btn-primary:hover,
 .btn-primary:focus,
 a.btn-primary:focus {
     background-color: transparent !important;
-    color: var(--accent-blue) !important; /* Text wird beim Hovern Cyan */
+    color: var(--accent-blue) !important;
     text-decoration: none !important;
 }
 
@@ -394,7 +402,7 @@ a.btn-secondary:visited {
     transition: all 0.3s ease;
     display: inline-block;
     background-color: transparent !important;
-    color: #ffffff !important; /* Erzwingt weißen Text */
+    color: #ffffff !important;
     border: 2px solid #30363d !important;
     text-decoration: none !important;
 }
